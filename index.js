@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
@@ -70,10 +71,9 @@ app.delete('/students/:id', async (req, res) => {
     }
 });
 
+
 mongoose
-  .connect(
-    "mongodb+srv://admin:40Vj32niyuWac9jE@cluster0.p4vq3.mongodb.net/Student-APi?retryWrites=true&w=majority&appName=Cluster0"
-  )
+  .connect(process.env.MONGODB_URI) 
   .then(() => {
     console.log("connected to mongodb");
     app.listen(port, () => {
@@ -82,4 +82,4 @@ mongoose
   })
   .catch((error) => {
     console.log(error);
-  });
+  })
