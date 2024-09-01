@@ -8,7 +8,7 @@ const port = 3000;
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.redirect('/v1/students');
+    res.redirect('/students');
   });
 
 
