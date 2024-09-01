@@ -4,10 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node index.js",
     "dev": "nodemon index.js"
   },
+  "engines": {
+    "node": "18.x",
+    "npm": "6.x"
+  },
+
   "keywords": [],
   "author": "",
   "license": "ISC",

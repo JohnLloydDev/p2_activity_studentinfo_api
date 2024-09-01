@@ -1,10 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const Student = require("./models/studentsModel"); // Ensure this model is correct
+const Student = require("./models/studentsModel"); 
 const port = 3000;
 
 app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.redirect('/api/students');
+  });
 
 
 app.get('/students', async (req, res) => {
